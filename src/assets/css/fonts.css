@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "SourceHanSansCN";
+    font-weight: 100;
+    src: url("../fonts/SourceHanSansCN/SourceHanSansCN-ExtraLight.otf");
+}
+
+@font-face {
+    font-family: "SourceHanSansCN";
+    font-weight: 200;
+    src: url("../fonts/SourceHanSansCN/SourceHanSansCN-Light.otf");
+}
+
+@font-face {
+    font-family: "SourceHanSansCN";
+    src: url("../fonts/SourceHanSansCN/SourceHanSansCN-Regular.otf");
+}
+
+@font-face {
+    font-family: "SourceHanSansCN";
+    font-weight: bold;
+    src: url("../fonts/SourceHanSansCN/SourceHanSansCN-Bold.otf");
+}
