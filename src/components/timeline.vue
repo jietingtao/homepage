@@ -1,6 +1,6 @@
 <template>
   <a-divider orientation="left" style="font-size:25px">Student Activity Timeline</a-divider>
-  <a-divider orientation="left" style="font-size:15px; color:#808080">&nbsp&nbsp&nbsp Interaction, Lecture, Reading</a-divider>
+  <a-divider orientation="left" style="font-size:15px; color:#808080">&nbsp&nbsp&nbsp Interaction, Lecture, learning</a-divider>
   <div>
     <highcharts
       :constructorType="'ganttChart'"
@@ -64,74 +64,126 @@ export default {
           text: ' ',
         },
         xAxis: {
-          min: Date.UTC(2014, 10, 17),
-          max: Date.UTC(2014, 10, 30),
+          min: Date.UTC(2024, 4, 25),
+          max: Date.UTC(2024, 4, 27),
+        },
+        yAxis: {
+            uniqueNames: true
         },
 
+    navigator: {
+        enabled: true,
+        liveRedraw: true,
+        series: {
+            type: 'gantt',
+            pointPlacement: 0.5,
+            pointPadding: 0.25,
+            accessibility: {
+                enabled: false
+            }
+        },
+        yAxis: {
+            min: 0,
+            max: 3,
+            reversed: true,
+            categories: []
+        }
+    },
+
+    scrollbar: {
+        enabled: true
+    },
+
+    rangeSelector: {
+        enabled: true,
+        selected: 0
+    },
+
+    accessibility: {
+        point: {
+            descriptionFormat: '{yCategory}. ' +
+                '{#if completed}Task {(multiply completed.amount 100):.1f}% completed. {/if}' +
+                'Start {x:%Y-%m-%d}, end {x2:%Y-%m-%d}.'
+        },
+        series: {
+            descriptionFormat: '{name}'
+        }
+    },
+        credits: {
+              enabled: false// 隐藏右下角水印
+        },
+        
         series: [
-          {
-            name: 'Project 1',
+          { lineColor: '#525E89',
+            name: 'Interaction',
             data: [
               {
-                name: 'tao jieting',
-                start: Date.UTC(2014, 10, 18),
-                end: Date.UTC(2014, 10, 25),
-                completed: 0.25,
+                name: 'Tina',
+                start: Date.UTC(2024, 4, 25,10,0,0),
+                end: Date.UTC(2024, 4, 25,12,0,0),              
               },
               {
-                name: 'xiaoming',
-                start: Date.UTC(2014, 10, 27),
-                end: Date.UTC(2014, 10, 29),
+                name: 'Tina',
+                start: Date.UTC(2024, 4, 26,15,47,0),
+                end: Date.UTC(2024, 4, 26,16,0),              
+              },              
+              {
+                name: 'Bob',
+                start: Date.UTC(2024, 4, 25,10,0,0),
+                end: Date.UTC(2024, 4, 25,12,0,0),
               },
               {
-                name: 'xiaohong',
-                start: Date.UTC(2014, 10, 20),
-                end: Date.UTC(2014, 10, 25),
-                completed: {
-                  amount: 0.12,
-                  fill: '#fa0',
-                },
+                name: 'Cindy',
+                start: Date.UTC(2024, 4, 25,10,0,0),
+                end: Date.UTC(2024, 4, 25,12,0,0),
+
               },
               {
-                name: 'xiaolv',
-                start: Date.UTC(2014, 10, 23),
-                end: Date.UTC(2014, 10, 26),
+                name: 'Amy',
+                start: Date.UTC(2024, 4, 25,10,0,0),
+                end: Date.UTC(2024, 4, 25,12,0,0),
               },
               {
-                name: 'xiaolv',
-                start: Date.UTC(2014, 10, 23),
-                end: Date.UTC(2014, 10, 26),
+                name: 'Dontknow',
+                start: Date.UTC(2024, 4, 25,10,0,0),
+                end: Date.UTC(2024, 4, 25,12,0,0),
               },
               {
-                name: 'xiaolv',
-                start: Date.UTC(2014, 10, 23),
-                end: Date.UTC(2014, 10, 26),
+                name: 'who',
+                start: Date.UTC(2024, 4, 25,10,0,0),
+                end: Date.UTC(2024, 4, 25,12,0,0),
               },
               {
-                name: 'xiaolv',
-                start: Date.UTC(2014, 10, 23),
-                end: Date.UTC(2014, 10, 26),
+                name: 'Tina',
+                start: Date.UTC(2024, 4, 26,11,0,0),
+                end: Date.UTC(2024, 4, 26,11,20),              
+              },              
+              {
+                name: 'Bob',
+                start: Date.UTC(2024, 4, 26,10,0,0),
+                end: Date.UTC(2024, 4, 26,14,0,0),
               },
               {
-                name: 'xiaolv',
-                start: Date.UTC(2014, 10, 23),
-                end: Date.UTC(2014, 10, 26),
+                name: 'Cindy',
+                start: Date.UTC(2024, 4, 26,11,0,0),
+                end: Date.UTC(2024, 4, 26,12,0,0),
+
               },
               {
-                name: 'xiaolv',
-                start: Date.UTC(2014, 10, 23),
-                end: Date.UTC(2014, 10, 26),
+                name: 'Amy',
+                start: Date.UTC(2024, 4, 26,13,50,0),
+                end: Date.UTC(2024, 4, 26,14,10,0),
               },
               {
-                name: 'xiaolv',
-                start: Date.UTC(2014, 10, 23),
-                end: Date.UTC(2014, 10, 26),
+                name: 'Dontknow',
+                start: Date.UTC(2024, 4, 26,10,0,0),
+                end: Date.UTC(2024, 4, 26,10,0,0),
               },
               {
-                name: 'xiaolv',
-                start: Date.UTC(2014, 10, 23),
-                end: Date.UTC(2014, 10, 26),
-              }
+                name: 'who',
+                start: Date.UTC(2024, 4, 26,17,0,0),
+                end: Date.UTC(2024, 4, 26,18,0,0),
+              },
             ],
           },
         ],
